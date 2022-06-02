@@ -26,12 +26,20 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 private:
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, Category = "Moving Platform")
 	FVector CurrentLocation{};
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, Category = "Moving Platform")
 	float PathDistance{100.f};
 
-	FVector StartLocation{};
+	UPROPERTY(EditAnywhere, Category = "Moving Platform")
+	FRotator RotationSpeed{};
 
+	UPROPERTY(EditAnywhere, Category = "Moving Platform")
+	bool bIsClockwise{true};
+
+	FVector StartLocation{};
+	void MovePlatform(float deltaTime);
+	void RotatePlatform(float deltaTime);
+	bool shouldPlatformReturn(float distanceMoved);
 };

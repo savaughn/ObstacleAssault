@@ -15,21 +15,41 @@ AMovingPlatform::AMovingPlatform()
 void AMovingPlatform::BeginPlay()
 {
 	Super::BeginPlay();
+	StartLocation = GetActorLocation();
+}
+
+void AMovingPlatform::MovePlatform(float DeltaTime) {
 	CurrentLocation = GetActorLocation();
-	StartLocation = CurrentLocation;
+	CurrentLocation = CurrentLocation + (PlatformVelocity * DeltaTime);
+	SetActorLocation(CurrentLocation);
+
+	float DistanceMoved = FVector::Distance(CurrentLocation, StartLocation);
+	if (shouldPlatformReturn(DistanceMoved)) {
+		FVector MoveDirection = PlatformVelocity.GetSafeNormal();
+		StartLocation = StartLocation + (PathDistance * MoveDirection);
+		SetActorLocation(StartLocation);
+		PlatformVelocity = -PlatformVelocity;
+	}
+}
+
+void AMovingPlatform::RotatePlatform(float DeltaTime) {
+	FRotator CurrentRotation = GetActorRotation();
+	int direction = bIsClockwise ? 1 : -1;
+	CurrentRotation= CurrentRotation + (direction * RotationSpeed * DeltaTime);
+	SetActorRotation(CurrentRotation);
 }
 
 // Called every frame
 void AMovingPlatform::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	CurrentLocation += (PlatformVelocity * DeltaTime);
-	SetActorLocation(CurrentLocation);
 
-	float DistanceMoved = FVector::Distance(CurrentLocation, StartLocation);
-	if (DistanceMoved > PathDistance) {
-		PlatformVelocity = -PlatformVelocity;
-		StartLocation = CurrentLocation;
-	}
+	MovePlatform(DeltaTime);
+	RotatePlatform(DeltaTime);
+	
+}
+
+bool AMovingPlatform::shouldPlatformReturn(float distanceMoved) {
+	return distanceMoved > PathDistance;
 }
 
