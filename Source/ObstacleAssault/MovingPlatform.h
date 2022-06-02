@@ -28,4 +28,10 @@ public:
 private:
 	UPROPERTY(EditAnywhere)
 	FVector CurrentLocation{};
+
+	UPROPERTY(EditAnywhere)
+	float PathDistance{100.f};
+
+	FVector StartLocation{};
+
 };

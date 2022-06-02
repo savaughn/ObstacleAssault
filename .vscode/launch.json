@@ -2,9 +2,16 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
+			"name": "debug",
+			"type": "cppvsdbg",
+			"request": "attach",
+			"processName": "UnrealEditor.exe",
+			"visualizerFile": "D:\\UE_5.0\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+		},
+		{
 			"name": "Launch ObstacleAssault (Debug)",
 			"request": "launch",
-			"program": "Z:\\Unreal Projects\\ObstacleAssault\\Binaries\\Win64\\UnrealGame-Win64-Debug.exe",
+			"program": "D:\\ObstacleAssault\\Binaries\\Win64\\UnrealGame-Win64-Debug.exe",
 			"preLaunchTask": "ObstacleAssault Win64 Debug Build",
 			"args": [
 			],
@@ -20,7 +27,7 @@
 		{
 			"name": "Launch ObstacleAssault (DebugGame)",
 			"request": "launch",
-			"program": "Z:\\Unreal Projects\\ObstacleAssault\\Binaries\\Win64\\UnrealGame-Win64-DebugGame.exe",
+			"program": "D:\\ObstacleAssault\\Binaries\\Win64\\UnrealGame-Win64-DebugGame.exe",
 			"preLaunchTask": "ObstacleAssault Win64 DebugGame Build",
 			"args": [
 			],
@@ -36,7 +43,7 @@
 		{
 			"name": "Launch ObstacleAssault (Development)",
 			"request": "launch",
-			"program": "Z:\\Unreal Projects\\ObstacleAssault\\Binaries\\Win64\\UnrealGame.exe",
+			"program": "D:\\ObstacleAssault\\Binaries\\Win64\\UnrealGame.exe",
 			"preLaunchTask": "ObstacleAssault Win64 Development Build",
 			"args": [
 			],
@@ -52,7 +59,7 @@
 		{
 			"name": "Launch ObstacleAssault (Test)",
 			"request": "launch",
-			"program": "Z:\\Unreal Projects\\ObstacleAssault\\Binaries\\Win64\\UnrealGame-Win64-Test.exe",
+			"program": "D:\\ObstacleAssault\\Binaries\\Win64\\UnrealGame-Win64-Test.exe",
 			"preLaunchTask": "ObstacleAssault Win64 Test Build",
 			"args": [
 			],
@@ -68,7 +75,7 @@
 		{
 			"name": "Launch ObstacleAssault (Shipping)",
 			"request": "launch",
-			"program": "Z:\\Unreal Projects\\ObstacleAssault\\Binaries\\Win64\\UnrealGame-Win64-Shipping.exe",
+			"program": "D:\\ObstacleAssault\\Binaries\\Win64\\UnrealGame-Win64-Shipping.exe",
 			"preLaunchTask": "ObstacleAssault Win64 Shipping Build",
 			"args": [
 			],
@@ -87,7 +94,7 @@
 			"program": "D:\\UE_5.0\\Engine\\Binaries\\Win64\\UnrealEditor-Win64-Debug.exe",
 			"preLaunchTask": "ObstacleAssaultEditor Win64 Debug Build",
 			"args": [
-				"Z:\\Unreal Projects\\ObstacleAssault\\ObstacleAssault.uproject"
+				"D:\\ObstacleAssault\\ObstacleAssault.uproject"
 			],
 			"cwd": "D:\\UE_5.0",
 			"stopAtEntry": false,
@@ -104,7 +111,7 @@
 			"program": "D:\\UE_5.0\\Engine\\Binaries\\Win64\\UnrealEditor-Win64-DebugGame.exe",
 			"preLaunchTask": "ObstacleAssaultEditor Win64 DebugGame Build",
 			"args": [
-				"Z:\\Unreal Projects\\ObstacleAssault\\ObstacleAssault.uproject"
+				"D:\\ObstacleAssault\\ObstacleAssault.uproject"
 			],
 			"cwd": "D:\\UE_5.0",
 			"stopAtEntry": false,
@@ -121,7 +128,7 @@
 			"program": "D:\\UE_5.0\\Engine\\Binaries\\Win64\\UnrealEditor.exe",
 			"preLaunchTask": "ObstacleAssaultEditor Win64 Development Build",
 			"args": [
-				"Z:\\Unreal Projects\\ObstacleAssault\\ObstacleAssault.uproject"
+				"D:\\ObstacleAssault\\ObstacleAssault.uproject"
 			],
 			"cwd": "D:\\UE_5.0",
 			"stopAtEntry": false,
@@ -140,7 +147,7 @@
 			"args": [
 				"-projectfiles",
 				"-vscode",
-				"-project=Z:\\Unreal Projects\\ObstacleAssault\\ObstacleAssault.uproject",
+				"-project=D:\\ObstacleAssault\\ObstacleAssault.uproject",
 				"-game",
 				"-engine"
 			],
